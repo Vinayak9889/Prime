@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'primes/output.css' %}">
+</head>
+<body>
+    <div id="output">
+        <h1>Prime numbers less than or equal to {{ number }}</h1>
+        <div class="prime-container">
+        {% for prime in primes %}
+            <div class="prime-box">{{ prime }}</div>
+        {% endfor %}
+        </div>
+        <a href="{% url 'input_page' %}">Enter another number</a>
+    </div>
+</body>
+</html>
